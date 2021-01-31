@@ -14,13 +14,13 @@
 
 1. 첫 번째는 건물 안이나 특정 지역을 범위로 하는 네트워크로 LAN(Local Area Network) 이라고 한다.
 
-![Local Area Network (LAN) – Network Encyclopedia](1장_03. 랜(LAN)과 왠(WAN).assets/local-area-network-LAN-1024x488.jpg)
+![Local Area Network (LAN) – Network Encyclopedia](1장_03_랜(LAN)과_왠(WAN).assets/local-area-network-LAN-1024x488.jpg)
 
 LAN은 가정이나 빌딩 안에 있는 사무실 같이 지리적으로 제한된 곳에서 컴퓨터와 프린터를 연결할 수 있는 네트워크이다.
 
 2. 두 번째는 지리적으로 넓은 범위에 구축된 네트워크로 WAN(Wide Area Network)이라고 한다.
 
-![인터넷의 정의와 LAN, WAN의 개념 - IT에 취.하.개.](1장_03. 랜(LAN)과 왠(WAN).assets/99E292335AE321C91E)
+![인터넷의 정의와 LAN, WAN의 개념 - IT에 취.하.개.](1장_03_랜(LAN)과_왠(WAN).assets/99E292335AE321C91E)
 
 WAN(Wide Area Network)은 인터넷 서비스 제공자(ISP)가 제공하는 서비스를 사용하여 구축된 네트워크를 말한다. LAN과 LAN을 연결하는 것으로 생각해도 된다.
 
