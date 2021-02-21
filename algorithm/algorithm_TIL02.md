@@ -1,4 +1,4 @@
-## List 2
+# List2
 
 ---
 
@@ -44,6 +44,15 @@ def sequentialSearch(a,n,key):
 
 * 자료를 순차적으로 검색하면서 키 값을 비교하여, 원소의 키 값이 검색 대상의 키 값보다 크면 찾는 원소가 없다는 것이므로 더 이상 검색하지 않고 검색을 종료한다.
 
+```python
+def sequentialSearch2(a, n, key):
+    i = 0
+    while i < n and a[i] < key:
+        i+=1
+    if i < n : return i
+    else: return -1
+```
+
 
 
 ## 이진 검색 (Binary Search)
@@ -52,7 +61,7 @@ def sequentialSearch(a,n,key):
 
 #### 자료의 가운데에 있는 항목의 키 값과 비교하여 다음 검색의 위치를 결정하고 검색을 계속 진행하는 방법
 
-* 목적 키를 찾을 때 때까지 이진 검색을 순환적으로 반복 수행함으로써 검색 범위를 반으로 줄여가면서 보다 빠르게 검색을 수행함
+* 목적 키를 찾을  때까지 이진 검색을 순환적으로 반복 수행함으로써 검색 범위를 반으로 줄여가면서 보다 빠르게 검색을 수행함
 
 이진 검색을 하기 위해서는 자료의 형태가 정렬된 형태여야 한다.
 
@@ -64,9 +73,44 @@ def sequentialSearch(a,n,key):
 * 찾고자 하는 값을 찾을 때 까지 위 과정을 반복한다.
 * 시간 복잡도 O(log n)
 
+#### 구현
+
+* 검색 범위의 시작점과 종료점을 이용하여 검색을 반복 수행한다.
+* 이진 검색의 경우, 자료에 삽입이나 삭제가 발생했을 때 배열의 상태를 항상 **정렬 상태로** 유지하는 추가 작업이 필요하다.
+
+```python
+def binarySearch(a, key):
+    start = 0
+    end = len(a)-1
+    while start <= end:
+        middle = (start + end)//2
+        if a[middle] == key :		# 검색 성공
+        	return True
+       	elif a[middle] > key:
+            end = middle -1
+        else: start = middle + 1
+    return False		# 검색 실패
+```
+
 
 
 #### 재귀 호출
+
+```python
+def binarySearch2(a, low, high, key) :
+    if high < low : # 검색 실패, 재귀 탈출
+        return False
+   	else:
+        middle = (low + high) // 2
+        if key == a[middle]: 	#검색 성공
+            return Ture
+        elif key < a[middle] :
+            return binarySearch2(a, low, middle-1, key)
+        elif a[middle] < key:
+            return binarySearch2(a, middle+1, high, key)
+```
+
+
 
 ![image-20210215151906635](algorithm_TIL02.assets/image-20210215151906635.png)
 
@@ -129,7 +173,7 @@ def select(list, k):
 * O(n^2)
 
 ```python
-def selectionSort(a):
+def selectionSort(a : List[int]) -> List[int]:
     for i in range(0, len(a)-1):		#마지막 원소는 정해진 자리 하나이기 때문에 len(a)-1
         min = i
         for j in range(i+1, len(a)):
