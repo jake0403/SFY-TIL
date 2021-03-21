@@ -10,6 +10,8 @@
   * Reassuringly secure
   * Exceedingly scalable
   * Incredibly versatile
+  
+  
 * django는 Python으로 작성된 오픈소스 웹 어플리케이션 프레임워크로, MVC(MTV) 모델 패턴을 따르고 있다.
 * Model => 데이터베이스 관리
 * Template => 레이아웃(화면)
@@ -83,7 +85,7 @@ $ python manage.py startapp 앱 이름			    # 앱 이름 관련 MTV 파일 생�
 
 ## Template inheritance
 * 템플릿 상속은 기본적으로 코드의 재사용성에 초점을 맞춤
-* 템플릿 상속을 사용하면 사이트의 모든 공통 요소를 포함하고, 하위 템플릿이 재정의(override) 할 수 있는 블록을 정의하는 기본 'skeleto' 템플릿을 만들 수 있음
+* 템플릿 상속을 사용하면 사이트의 모든 공통 요소를 포함하고, 하위 템플릿이 재정의(override) 할 수 있는 블록을 정의하는 기본 'skeleton' 템플릿을 만들 수 있음
 
 ### {% extends %}
 * 자식(하위) 템플릿이 부모 템플릿을 확장한다는 것을 알림
@@ -94,7 +96,21 @@ $ python manage.py startapp 앱 이름			    # 앱 이름 관련 MTV 파일 생�
 * 즉, 하위 템플릿이 채울 수 있는 공간
 
 
+
+## Django template system (by django 설계 철학)
+
+* **표현과 로직(view)을 분리**
+  * 템플릿 시스템은 표현을 제어하는 도구이자 표현에 관련된 로직일 뿐이라고 생각한다.
+  * 즉, 템플릿 시스템은 이러한 기본 목표를 넘어서는 기능을 지원하지 말아야 한다.
+* **중복을 배제**
+  * 대다수의 동적 웹 사이트는 공통 header, footer, navbar 같은 사이트 공통 디자인을 갖는다.
+  * Django 템플릿 시스템은 이러한 요소를 한 곳에 저장하기 쉽게 하여 중복 코드를 없애야 한다.
+  * 이것이 템플릿 상속의 기초가 되는 철학이다.
+
+
+
 ## HTML form element
+
 * 웹에서 사용자 정보를 입력하는 여러 방식 (text button, checkbox, file, hidden, image, password, radio, reset, submit)을 제공하고, 사용자로부터 할당된 데이터를 서버로 전송하는 역할을 담당
 
 * 핵심속성
@@ -165,6 +181,12 @@ urlpatterns = [
 ```django
 <a href="{% url 'articles:index' %}">메인 페이지</a>
 ```
+
+![image-20210321163002908](django01.assets/image-20210321163002908.png)
+
+
+
+
 
 ## 관용적 규칙
 
