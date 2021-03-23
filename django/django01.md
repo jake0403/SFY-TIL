@@ -11,7 +11,6 @@
   * Exceedingly scalable
   * Incredibly versatile
   
-  
 * django는 Python으로 작성된 오픈소스 웹 어플리케이션 프레임워크로, MVC(MTV) 모델 패턴을 따르고 있다.
 * Model => 데이터베이스 관리
 * Template => 레이아웃(화면)
@@ -114,8 +113,8 @@ $ python manage.py startapp 앱 이름			    # 앱 이름 관련 MTV 파일 생�
 * 웹에서 사용자 정보를 입력하는 여러 방식 (text button, checkbox, file, hidden, image, password, radio, reset, submit)을 제공하고, 사용자로부터 할당된 데이터를 서버로 전송하는 역할을 담당
 
 * 핵심속성
-  * 	**action** : 입력 데이터가 전송될 URL 지정
-  * 	**method** : 입력 데이터 전달 방식 지정 (e.g. GET, POST)
+  * 	**action** : 입력 데이터가 전송될 URL 지정 (어디로?)
+  * 	**method** : 입력 데이터 전달 방식 지정 (e.g. GET, POST => 전송 방식)
 
 
 
@@ -125,6 +124,17 @@ $ python manage.py startapp 앱 이름			    # 앱 이름 관련 MTV 파일 생�
 * 데이터를 가져올 때만 사용해야 함
 * 데이터를 서버로 전송할 때 body가 아닌 Query String Parameters를 통해 전송
 * 우리는 서버에 요청을 하면 HTML 문서 파일 한 장을 받는데 이때 사용하는 요청의 방식이 GET
+
+
+
+## HTML input element
+
+* 사용자로부터 데이터를 입력 받기 위해 사용
+* type 속성에 따라 동작 방식이 달라짐
+* 핵심 속성
+  * name (데이터의 키)
+  * 중복 가능, 양식을 제출했을 때 name이라는 이름에 설정된 값을 넘겨서 값을 가져올 수 있음.
+  * 주요 용도는 GET/POST 방식으로 서버에 전달하는 파라미터(name은 key, value는 value)로 `?key=value&key=value` 형태로 전달
 
 
 

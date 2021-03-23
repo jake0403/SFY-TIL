@@ -124,3 +124,4 @@
 
 * 조회 시 특정 조건을 적용시키기 위해 사용
 * QuerySet Method(get, filter, exclude)에 대한 키워드 인수로 사용 됨
+* 사용은 Article.object.filter(field명__조건=값)
