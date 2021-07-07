@@ -295,7 +295,7 @@
             myFunc: function(){
                 console.log(this)  // Vue instance
             },
-            yourFunc: function(){
+            yourFunc: ()=>{
                 console.log(this) // window
             }
         }
@@ -327,7 +327,7 @@
    * `<span v-bind:id="dynamicID"></span>`
 4. JS 표현식
    * `{{ number +  1 }}`
-   * `{{ message.split(' ').revers().join(' ') }}`
+   * `{{ message.split(' ').reverse().join(' ') }}`
 
 
 
