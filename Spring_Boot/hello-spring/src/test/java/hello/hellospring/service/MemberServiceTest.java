@@ -1,14 +1,3 @@
-# 회원 서비스 테스트
-
----
-
-**Intellij 단축키 : 복사 후 변수명 한 번에 바꾸는 방법 => `shift + F6` **
-
-
-
-테스트 코드
-
-```java
 package hello.hellospring.service;
 
 import hello.hellospring.domain.Member;
@@ -84,34 +73,3 @@ class MemberServiceTest {
     void 회원조회() {
     }
 }
-```
-
-
-
-기존에 작성했던 코드는 회원 서비스(`MemberService`)가 메모리 회원 리포지토리(`private final MemberRepository memberRepository = new MemoryMemberRepository();`)를 직접 생성하게 했다. 하지만 Test를 진행하게 되면 MemberService에서 생성한 MemberRepository와 다른 repository(인스턴스)가 된다. 따라서 의존성 주입(Dependency Injection)을 위해서는 `MemberService` 클래스에서 `private final MemberRepository memberRepository = new MemoryMemberRepository`로 생성했던 인스턴스를 다음과 같이 변경한다.
-
-```java
-package hello.hellospring.service;
-
-import hello.hellospring.domain.Member;
-import hello.hellospring.repository.MemberRepository;
-import hello.hellospring.repository.MemoryMemberRepository;
-
-import java.util.List;
-import java.util.Optional;
-
-public class MemberService {
-
-    private final MemberRepository memberRepository;
-    
-    public MemberService(MemberRepository memberRepository) {
-        this.memberRepository = memberRepository
-    }
-
-    .
-    .
-    .
-}
-```
-
-즉 외부에서 MemberService 클래스에 MemberRepository를 가져오게 만드는 것이다. 이렇게 한다면 Test에서 사용하는 MemberRepository와 Service에서 사용하는 MemberRepository는 같은 Repository를 갖을 수 있다.
